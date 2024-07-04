@@ -1,11 +1,9 @@
-const mongoose = require('mongoose');
-
-
-mongoose.connect('mongodb+srv://bewithme2407:IFlLcypNB9JMtk7t@mern-blog.iggxm3g.mongodb.net/internShip', {
+import mongoose from 'mongoose';
+import "dotenv/config"
+mongoose.connect(process.env.MONGO, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
-
 
 const cardSchema = new mongoose.Schema({
   name: String,
@@ -16,5 +14,5 @@ const cardSchema = new mongoose.Schema({
 });
 
 const Card = mongoose.model('Card', cardSchema);
-// export 
-module.exports = Card;
+
+export default Card;
