@@ -15,7 +15,7 @@ const UpdateData = () => {
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
-    axios.get(`http://localhost:5001/api/user/get/${id}`)
+    axios.get(`http://localhost:5004/api/user/get/${id}`)
       .then(res => {
         setFormData(res.data);
         setIsLoading(false);

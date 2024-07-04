@@ -26,7 +26,7 @@ function Signup() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    axios.post('http://localhost:5001/api/user/submit', formData)
+    axios.post('http://localhost:5004/api/user/submit', formData)
       .then(response => {
         navigate('/success')
         console.log('Data submitted successfully:', response.data);

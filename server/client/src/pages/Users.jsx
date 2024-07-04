@@ -11,7 +11,7 @@ const Users = () => {
   };
 
   const handleDelete = (id) => {
-    axios.delete(`http://localhost:5001/api/user/cards/${id}`)
+    axios.delete(`http://localhost:5004/api/user/cards/${id}`)
       .then(() => {
         setCards(cards.filter(card => card._id !== id));
       })
@@ -21,7 +21,7 @@ const Users = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:5001/api/user/cards')
+    axios.get('http://localhost:5004/api/user/cards')
       .then(response => {
         setCards(response.data);
       })

@@ -5,15 +5,15 @@ import userRoute from '../server/Routes/user.js';  // Ensure the path and extens
 import path from 'path'
 import { fileURLToPath } from 'url';
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = path.dirname(__filename);
 
 const app = express();
 
-
-
 app.use(bodyParser.json());
 app.use(cors());
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 app.use(express.static(path.join(__dirname, './client/dist')));
 
