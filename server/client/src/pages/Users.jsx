@@ -21,14 +21,15 @@ const Users = () => {
   };
 
   useEffect(() => {
-    axios.get('http://localhost:5004/api/user/cards')
+    axios.get('http://localhost:5004/api/user/list')
       .then(response => {
+        console.log(response.data);
         setCards(response.data);
       })
       .catch(error => {
         console.error('There was an error fetching the cards!', error);
       });
-  }, []); // Add an empty dependency array to ensure it runs only once
+  }); // Add an empty dependency array to ensure it runs only once
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100">
